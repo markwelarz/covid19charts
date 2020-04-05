@@ -11,7 +11,6 @@ export class DailyNewInfectionsService {
   constructor(private covid19dataService: Covid19dataService, private timeService: TimeService) { }
 
   public createChartOptions(countries: string[], startWhenCasesAtLeast: number, title: string): Highcharts.Options {
-    debugger;
     let startIndex: number = this.timeService.indexOfStartDate(countries, startWhenCasesAtLeast);
     let countrySeries: Highcharts.SeriesLineOptions[] = countries.map(v => this.seriesForCountry(v, startIndex));
     return {
