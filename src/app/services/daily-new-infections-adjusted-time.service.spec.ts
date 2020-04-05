@@ -35,12 +35,12 @@ describe('DailyNewInfectionsAdjustedTimeService', () => {
           text: 'title1'
         },
         series: [{
-          data: [10,11,12],
+          data: [10,11,12,50],
           type: 'line',
           name: 'countrya'
         },
         {
-          data: [10,6,7,10,11,12],
+          data: [10,6,7,10,11,12,13],
           type: 'line',
           name: 'countryb'
         }],
@@ -48,7 +48,7 @@ describe('DailyNewInfectionsAdjustedTimeService', () => {
           title: {
             text: 'Days since 10 infections'
           },
-          categories: ["0","1","2","3","4","5"]
+          categories: ["0","1","2","3","4","5","6"]
         }
       }
     );

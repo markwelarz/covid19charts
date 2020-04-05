@@ -11,7 +11,8 @@ export class MockCountryData {
         new InfectionCount(new Date(2020, 2, 4), 7),
         new InfectionCount(new Date(2020, 2, 5), 10),
         new InfectionCount(new Date(2020, 2, 6), 11),
-        new InfectionCount(new Date(2020, 2, 7), 12)]
+        new InfectionCount(new Date(2020, 2, 7), 12),
+        new InfectionCount(new Date(2020, 2, 8), 50)]
         );
 
     const countryb: Country = new Country('countryb', [
@@ -21,7 +22,8 @@ export class MockCountryData {
         new InfectionCount(new Date(2020, 2, 4), 7),
         new InfectionCount(new Date(2020, 2, 5), 10),
         new InfectionCount(new Date(2020, 2, 6), 11),
-        new InfectionCount(new Date(2020, 2, 7), 12)]
+        new InfectionCount(new Date(2020, 2, 7), 12),
+        new InfectionCount(new Date(2020, 2, 8), 13)]
         );
     
     return [countrya, countryb];
@@ -49,5 +51,5 @@ export class MockCountryData {
             new InfectionCount(new Date(2020, 2, 18), 18)]
             );
         return [countrya];
-        }
+        }        
 }

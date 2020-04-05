@@ -34,17 +34,17 @@ describe('DailyNewInfectionsService', () => {
           text: 'title1'
         },
         series: [{
-          data: [4,5,6,7,10,11,12],
+          data: [4,5,6,7,10,11,12,50],
           type: 'line',
           name: 'countrya'
         },
         {
-          data: [4,10,6,7,10,11,12],
+          data: [4,10,6,7,10,11,12,13],
           type: 'line',
           name: 'countryb'
         }],
         xAxis: {
-          categories: ['1 Mar', '2 Mar','3 Mar','4 Mar','5 Mar','6 Mar', '7 Mar']
+          categories: ['1 Mar', '2 Mar','3 Mar','4 Mar','5 Mar','6 Mar', '7 Mar', '8 Mar']
         }
       }
     );
@@ -59,12 +59,12 @@ describe('DailyNewInfectionsService', () => {
       },
       series: [
         {
-          data: [11,12],
+          data: [11,12,13],
           type: 'line',
           name: 'countryb'
         }],
         xAxis: {
-          categories: ['6 Mar', '7 Mar']
+          categories: ['6 Mar', '7 Mar', '8 Mar']
         }
       }
     );

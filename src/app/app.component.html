@@ -7,16 +7,16 @@
 
     <div class="bg-light">
         <h4>Total infections</h4>
-        Shows total infections.  With and without China and Italy for better horizontal scale.
+        Shows total infections.  With and without Unite States for better scale.
         <div class="row">
             <div class="col-md">
-                <time-comparison [startWhenCasesAtLeast]="100" [countries]="countriesLinearComparison()"
+                <time-comparison [startWhenCasesAtLeast]="50000" [countries]="countriesLinearComparison()"
                     title="Cumulative Infections">
                 </time-comparison>
             </div>
             <div class="col-md">
-                <time-comparison [startWhenCasesAtLeast]="100" [countries]="allCountriesLinearComparison()"
-                    title="Cumulative Infections, including China and Italy">
+                <time-comparison [startWhenCasesAtLeast]="20000" [countries]="allCountriesLinearComparison()"
+                    title="Cumulative Infections, including US">
                 </time-comparison>
             </div>
         </div>

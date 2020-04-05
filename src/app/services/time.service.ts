@@ -11,7 +11,8 @@ export class TimeService {
   constructor(private covid19dataService: Covid19dataService) { }
 
   public indexOfStartDate(countries: string[], startWhenCasesAtLeast: number): number {
-    let startIndexesPerCountry = countries.map(v => this.indexOfStartDateFor(v, startWhenCasesAtLeast));
+    let startIndexesPerCountry = countries.map(v => this.indexOfStartDateFor(v, startWhenCasesAtLeast))
+     .filter(v => v >= 0);
     return Math.min(...startIndexesPerCountry);
   }
 

@@ -31,8 +31,13 @@ describe('TimeService', () => {
     expect(service.indexOfStartDate(['countrya', 'countryb'], 10)).toEqual(1);
   });
 
+  it('indexOfStartDate minimum-cases when a country does not have that number', () => {
+    const service: TimeService = TestBed.get(TimeService);
+    expect(service.indexOfStartDate(['countrya', 'countryb'], 45)).toEqual(7);
+  });
+
   it('formattedDateInRange', () => {
     const service: TimeService = TestBed.get(TimeService);
-    expect(service.formattedDateInRange(4)).toEqual(['5 Mar','6 Mar','7 Mar']);
+    expect(service.formattedDateInRange(4)).toEqual(['5 Mar','6 Mar','7 Mar', '8 Mar']);
   });
 });
