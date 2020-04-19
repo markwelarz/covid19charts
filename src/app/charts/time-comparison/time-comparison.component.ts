@@ -19,10 +19,12 @@ export class TimeComparisonComponent implements OnInit {
   public countries: string[]
   @Input()
   public title: string;
+  @Input()
+  public delta: boolean;
 
   constructor(private dailyNewInfectionsService: DailyNewInfectionsService) { }
 
   ngOnInit() {
-    this.chartOptions = this.dailyNewInfectionsService.createChartOptions(this.countries, this.startWhenCasesAtLeast, this.title);
+    this.chartOptions = this.dailyNewInfectionsService.createChartOptions(this.countries, this.startWhenCasesAtLeast, this.title, this.delta);
   }
 }

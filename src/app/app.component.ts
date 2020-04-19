@@ -9,14 +9,14 @@ import { Config } from './config';
 export class AppComponent {
 
   public countriesLinearComparison() : string[] {
-    return ["France", "United Kingdom", "Germany", "Spain", "Italy", "China", "Switzerland"];
+    return ["France", "United Kingdom", "Germany", "Spain", "Italy"];
   }
 
   public allCountriesLinearComparison() : string[] {
-    return ["France", "United Kingdom", "Germany", "Spain", "Italy", "China", "Switzerland", "US"];
+    return ["France", "United Kingdom", "Germany", "Spain", "Italy", "China", "US"];
   }
 
   public percentageComparison() : string[] {
-    return ["France", "United Kingdom", "Germany", "Spain", "Italy", "China", "Switzerland", "US"];
+    return ["France", "United Kingdom", "Germany", "Spain", "Italy", "China", "US"];
   }
 }

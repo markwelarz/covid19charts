@@ -12,7 +12,17 @@ export class MockCountryData {
         new InfectionCount(new Date(2020, 2, 5), 10),
         new InfectionCount(new Date(2020, 2, 6), 11),
         new InfectionCount(new Date(2020, 2, 7), 12),
-        new InfectionCount(new Date(2020, 2, 8), 50)]
+        new InfectionCount(new Date(2020, 2, 8), 50)],
+
+        [
+        new InfectionCount(new Date(2020, 2, 1), 0),
+        new InfectionCount(new Date(2020, 2, 2), 1),
+        new InfectionCount(new Date(2020, 2, 3), 1),
+        new InfectionCount(new Date(2020, 2, 4), 1),
+        new InfectionCount(new Date(2020, 2, 5), 3),
+        new InfectionCount(new Date(2020, 2, 6), 1),
+        new InfectionCount(new Date(2020, 2, 7), 1),
+        new InfectionCount(new Date(2020, 2, 8), 38)]
         );
 
     const countryb: Country = new Country('countryb', [
@@ -23,7 +33,16 @@ export class MockCountryData {
         new InfectionCount(new Date(2020, 2, 5), 10),
         new InfectionCount(new Date(2020, 2, 6), 11),
         new InfectionCount(new Date(2020, 2, 7), 12),
-        new InfectionCount(new Date(2020, 2, 8), 13)]
+        new InfectionCount(new Date(2020, 2, 8), 13)],
+        [
+            new InfectionCount(new Date(2020, 2, 1), 0),
+            new InfectionCount(new Date(2020, 2, 2), 6),
+            new InfectionCount(new Date(2020, 2, 3), -4),
+            new InfectionCount(new Date(2020, 2, 4), 1),
+            new InfectionCount(new Date(2020, 2, 5), 1),
+            new InfectionCount(new Date(2020, 2, 6), 3),
+            new InfectionCount(new Date(2020, 2, 7), 1),
+            new InfectionCount(new Date(2020, 2, 8), 1)]
         );
     
     return [countrya, countryb];
@@ -48,7 +67,26 @@ export class MockCountryData {
             new InfectionCount(new Date(2020, 2, 15), 15),
             new InfectionCount(new Date(2020, 2, 16), 16),
             new InfectionCount(new Date(2020, 2, 17), 17),
-            new InfectionCount(new Date(2020, 2, 18), 18)]
+            new InfectionCount(new Date(2020, 2, 18), 18)],
+            [
+                new InfectionCount(new Date(2020, 2, 1), 0),
+                new InfectionCount(new Date(2020, 2, 2), 1),
+                new InfectionCount(new Date(2020, 2, 3), 1),
+                new InfectionCount(new Date(2020, 2, 4), 1),
+                new InfectionCount(new Date(2020, 2, 5), 1),
+                new InfectionCount(new Date(2020, 2, 6), 1),
+                new InfectionCount(new Date(2020, 2, 7), 1),
+                new InfectionCount(new Date(2020, 2, 8), 1),
+                new InfectionCount(new Date(2020, 2, 9), 1),
+                new InfectionCount(new Date(2020, 2, 10), 1),
+                new InfectionCount(new Date(2020, 2, 11), 1),
+                new InfectionCount(new Date(2020, 2, 12), 1),
+                new InfectionCount(new Date(2020, 2, 13), 1),
+                new InfectionCount(new Date(2020, 2, 14), 1),
+                new InfectionCount(new Date(2020, 2, 15), 1),
+                new InfectionCount(new Date(2020, 2, 16), 1),
+                new InfectionCount(new Date(2020, 2, 17), 1),
+                new InfectionCount(new Date(2020, 2, 18), 1)]
             );
         return [countrya];
         }        

@@ -6,28 +6,47 @@
     </div>
 
     <div class="bg-light">
-        <h4>Total infections</h4>
-        Shows total infections.  With and without Unite States for better scale.
+        <h4>Total new infections</h4>
+        Shows daily reported infections
         <div class="row">
             <div class="col-md">
-                <time-comparison [startWhenCasesAtLeast]="50000" [countries]="countriesLinearComparison()"
+                <time-comparison [startWhenCasesAtLeast]="500" [countries]="countriesLinearComparison()"
+                    title="Daily reported infections" [delta]=true>
+                </time-comparison>
+            </div>
+            <div class="col-md">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light">
+        <h4>Total infections</h4>
+        Shows total infections
+        <div class="row">
+            <div class="col-md">
+                <time-comparison [startWhenCasesAtLeast]="20000" [countries]="countriesLinearComparison()"
                     title="Cumulative Infections">
                 </time-comparison>
             </div>
             <div class="col-md">
                 <time-comparison [startWhenCasesAtLeast]="20000" [countries]="allCountriesLinearComparison()"
-                    title="Cumulative Infections, including US">
+                    title="Cumulative Infections, including US and China">
                 </time-comparison>
             </div>
         </div>
     </div>
 
     <div class="bg-light">
-        <h4>Total infections since 100 infections</h4>
+        <h4>Total infections since 1000 infections</h4>
         <div class="row">
             <div class="col-md">
-                <offset-time-comparison [startWhenCasesAtLeast]="100" [countries]="allCountriesLinearComparison()"
-                    title="Cumulative infections since 100 infections">
+                <offset-time-comparison [startWhenCasesAtLeast]="1000" [countries]="countriesLinearComparison()"
+                    title="Cumulative infections since 1000 infections">
+                </offset-time-comparison>
+            </div>
+            <div class="col-md">
+                <offset-time-comparison [startWhenCasesAtLeast]="1000" [countries]="allCountriesLinearComparison()"
+                    title="Cumulative infections since 1000 infections, including US and China">
                 </offset-time-comparison>
             </div>
         </div>

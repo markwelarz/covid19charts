@@ -26,7 +26,12 @@ export class Covid19dataService {
            .filter(headerColumn => this.isDateField(headerColumn))
            .map(dateHeader =>  new InfectionCount(parse(dateHeader, 'M/D/YY'), parseInt(csvRow[dateHeader]) || 0));
 
-         return new Country(csvRow['Country/Region'], infectionCounts);
+          let deltaCounts: InfectionCount[] = infectionCounts.map((ic, i, arr) => {
+            let deltaAmount: number = i==0 ? 0 : ic.amount - arr[i - 1].amount;
+            return new InfectionCount(ic.when, deltaAmount);
+          });
+
+         return new Country(csvRow['Country/Region'], infectionCounts, deltaCounts);
        });
     
        this._covidData = typed.reduce(this.combineCountryData, []);
@@ -43,6 +48,15 @@ export class Covid19dataService {
         }
         else {
           aggregatedCountryEntry.infectionCount.push(infectionCount);
+        }
+      }
+      for(const deltaCount of currentValue.deltaCount) {
+        const dayIndex: number = aggregatedCountryEntry.deltaCount.findIndex(ic => ic.when.getTime() === deltaCount.when.getTime());
+        if(dayIndex >= 0) {
+          aggregatedCountryEntry.deltaCount[dayIndex] = aggregatedCountryEntry.deltaCount[dayIndex].combine(deltaCount);
+        }
+        else {
+          aggregatedCountryEntry.deltaCount.push(deltaCount);
         }
       }
     }

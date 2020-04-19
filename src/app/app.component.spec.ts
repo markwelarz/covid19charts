@@ -29,6 +29,8 @@ class TimeComparisonStubComponent {
   public countries: string[]
   @Input()
   public title: string;
+  @Input()
+  public delta: boolean;
 }
 describe('AppComponent', () => {
   beforeEach(async(() => {

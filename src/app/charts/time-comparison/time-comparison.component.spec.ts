@@ -42,6 +42,7 @@ describe('TimeComparisonComponent', () => {
     component.countries = ['England', 'Scotland'];
     component.title = 'chart title';
     component.startWhenCasesAtLeast = 55;
+    component.delta = true;
 
     fixture.detectChanges();
   });
@@ -51,6 +52,6 @@ describe('TimeComparisonComponent', () => {
   });
 
   it('should retrieve chart options from service', () => {
-    expect(mockDailyNewInfectionsService.createChartOptions).toHaveBeenCalledWith(['England', 'Scotland'], 55, 'chart title');
+    expect(mockDailyNewInfectionsService.createChartOptions).toHaveBeenCalledWith(['England', 'Scotland'], 55, 'chart title', true);
   });
 });

@@ -33,8 +33,12 @@ describe('Covid19dataService', () => {
       req.flush(dataString);
 
       expect(service.covidData).toEqual([
-          new Country('Mars', [new InfectionCount(new Date(2020,1-1,22), 4), new InfectionCount(new Date(2020,1-1,23), 6)]),
-          new Country('Jupiter', [new InfectionCount(new Date(2020,1-1,22), 5), new InfectionCount(new Date(2020,1-1,23), 6)])
+          new Country('Mars', 
+          [new InfectionCount(new Date(2020,1-1,22), 4), new InfectionCount(new Date(2020,1-1,23), 6)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 2)]),
+          new Country('Jupiter', 
+          [new InfectionCount(new Date(2020,1-1,22), 5), new InfectionCount(new Date(2020,1-1,23), 6)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 1)])
         ]);
 
         done();
@@ -52,8 +56,12 @@ describe('Covid19dataService', () => {
       req.flush(dataString);
 
       expect(service.covidData).toEqual([
-          new Country('Mars', [new InfectionCount(new Date(2020,1-1,22), 4), new InfectionCount(new Date(2020,1-1,23), 6), new InfectionCount(new Date(2020,12-1,12), 14), new InfectionCount(new Date(2020,10-1,1), 18)]),
-          new Country('Jupiter', [new InfectionCount(new Date(2020,1-1,22), 5), new InfectionCount(new Date(2020,1-1,23), 6),new InfectionCount(new Date(2020,12-1,12), 87), new InfectionCount(new Date(2020,10-1,1), 3)])
+          new Country('Mars',
+          [new InfectionCount(new Date(2020,1-1,22), 4), new InfectionCount(new Date(2020,1-1,23), 6), new InfectionCount(new Date(2020,12-1,12), 14), new InfectionCount(new Date(2020,10-1,1), 18)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 2), new InfectionCount(new Date(2020,12-1,12), 8), new InfectionCount(new Date(2020,10-1,1), 4)]),
+          new Country('Jupiter',
+          [new InfectionCount(new Date(2020,1-1,22), 5), new InfectionCount(new Date(2020,1-1,23), 6),new InfectionCount(new Date(2020,12-1,12), 87), new InfectionCount(new Date(2020,10-1,1), 3)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 1),new InfectionCount(new Date(2020,12-1,12), 81), new InfectionCount(new Date(2020,10-1,1), -84)])
         ]);
 
         done();
@@ -71,9 +79,15 @@ describe('Covid19dataService', () => {
       req.flush(dataString);
 
       expect(service.covidData).toEqual([
-          new Country('Mars', [new InfectionCount(new Date(2020,1-1,22), 3), new InfectionCount(new Date(2020,1-1,23), 2)]),
-          new Country('Jupiter', [new InfectionCount(new Date(2020,1-1,22), 1), new InfectionCount(new Date(2020,1-1,23), 2)]),
-          new Country('Neptune', [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 0)])
+          new Country('Mars', 
+          [new InfectionCount(new Date(2020,1-1,22), 3), new InfectionCount(new Date(2020,1-1,23), 2)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), -1)]),
+          new Country('Jupiter',
+          [new InfectionCount(new Date(2020,1-1,22), 1), new InfectionCount(new Date(2020,1-1,23), 2)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 1)]),
+          new Country('Neptune', 
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 0)],
+          [new InfectionCount(new Date(2020,1-1,22), 0), new InfectionCount(new Date(2020,1-1,23), 0)])
         ]);
 
         done();

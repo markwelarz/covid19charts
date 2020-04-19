@@ -26,9 +26,9 @@ describe('DailyNewInfectionsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('all countries, all dates', () => {
+  it('all countries, all dates, cumulative', () => {
     const service: DailyNewInfectionsService = TestBed.get(DailyNewInfectionsService);
-    let chartOptions: Highcharts.Options = service.createChartOptions(["countrya", "countryb"], 0, "title1");
+    let chartOptions: Highcharts.Options = service.createChartOptions(["countrya", "countryb"], 0, "title1", false);
     expect(chartOptions).toEqual({
         title: {
           text: 'title1'
@@ -45,14 +45,17 @@ describe('DailyNewInfectionsService', () => {
         }],
         xAxis: {
           categories: ['1 Mar', '2 Mar','3 Mar','4 Mar','5 Mar','6 Mar', '7 Mar', '8 Mar']
+        },
+        yAxis: {
+          max: undefined
         }
       }
     );
   });
 
-  it('filtered countries, filtered dates', () => {
+  it('filtered countries, filtered dates, cumulative', () => {
     const service: DailyNewInfectionsService = TestBed.get(DailyNewInfectionsService);
-    let chartOptions: Highcharts.Options = service.createChartOptions(["countryb"], 11, "title2");
+    let chartOptions: Highcharts.Options = service.createChartOptions(["countryb"], 11, "title2", false);
     expect(chartOptions).toEqual({
       title: {
         text: 'title2'
@@ -65,9 +68,34 @@ describe('DailyNewInfectionsService', () => {
         }],
         xAxis: {
           categories: ['6 Mar', '7 Mar', '8 Mar']
+        },
+        yAxis: {
+          max: undefined
         }
       }
     );
   });
 
+  it('filtered countries, filtered dates, delta', () => {
+    const service: DailyNewInfectionsService = TestBed.get(DailyNewInfectionsService);
+    let chartOptions: Highcharts.Options = service.createChartOptions(["countryb"], 11, "title2", true);
+    expect(chartOptions).toEqual({
+      title: {
+        text: 'title2'
+      },
+      series: [
+        {
+          data: [3,1,1],
+          type: 'line',
+          name: 'countryb'
+        }],
+        xAxis: {
+          categories: ['6 Mar', '7 Mar', '8 Mar']
+        },
+        yAxis: {
+          max: 10000
+        }
+      }
+    );
+  });
 });
